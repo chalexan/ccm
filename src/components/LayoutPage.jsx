@@ -5,7 +5,6 @@ import DevicesPage from "./DevicesPage";
 import InfoPage from "./InfoPage";
 import MainPage from "./MainPage";
 import { RiTreasureMapLine } from "react-icons/ri";
-import PortfolioPage from "./PortfolioPage";
 import WorkPage from "./WorkPage";
 import {
   SettingOutlined,
@@ -30,18 +29,18 @@ const LayoutPage = (props) => {
   useEffect(() => {
     setWinwidth(document.documentElement.scrollWidth);
     const menuItem = document.getElementById("menu1");
-    winWidth > 500
-      ? (menuItem.style.minWidth = `${winWidth - 100}px`)
-      : (menuItem.style.minWidth = "100px");
-    console.log(props);
+    winWidth > 300
+      ? (menuItem.style.width = `${winWidth - 75}px`)
+      : (menuItem.style.width = "150px");
+    console.log(winWidth);
   }, []);
 
   return (
     <Layout className="layout">
-      <Header>
+      <Header style={{ padding: "0px 15px" }}>
         <Space>
-          <div className="logo" style={{ margin: "16px 24px 16px 20px;" }}>
-            <Image
+          <div className="logo" style={{ margin: "8px 24px 8px 20px;" }}>
+            <img
               width={50}
               height={50}
               src="./followmytracklogo.png"
@@ -114,7 +113,7 @@ const LayoutPage = (props) => {
           {page === "main" ? <MainPage /> : null}
           {page === "work" ? <WorkPage /> : null}
           {page === "devices" ? <DevicesPage /> : null}
-          {page === "portfolio" ? <PortfolioPage /> : null}
+
           {page === "info" ? <InfoPage /> : null}
         </div>
       </Content>

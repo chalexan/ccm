@@ -82,3 +82,7 @@
   width: 100%;
   min-width: 100%;
 }
+
+.ant-layout-header {
+ padding: 0 20px;
+}
