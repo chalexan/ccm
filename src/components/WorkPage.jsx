@@ -1,6 +1,7 @@
 import { Table, message } from "antd";
 import { useEffect } from "react";
 import copy from "copy-to-clipboard";
+import { CaretDownOutlined, CaretRightOutlined } from "@ant-design/icons";
 var json = require("../data/kadastr_karabi.json");
 
 const WorkPage = () => {
@@ -28,13 +29,21 @@ const WorkPage = () => {
       key: "name",
     },
     {
-      title: "⬇",
+      title: (
+        <font color="red">
+          <CaretDownOutlined />
+        </font>
+      ),
       dataIndex: "deep",
       key: "deep",
       sorter: (a, b) => a.deep - b.deep,
     },
     {
-      title: "➡",
+      title: (
+        <font color="green">
+          <CaretRightOutlined />
+        </font>
+      ),
       dataIndex: "length",
       key: "length",
       sorter: (a, b) => a.length - b.length,

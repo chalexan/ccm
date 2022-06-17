@@ -1,25 +1,22 @@
-import { Space, Image } from "antd";
+import { Space } from "antd";
 import { Layout, Menu, Breadcrumb } from "antd";
 import { useState } from "react";
 import DevicesPage from "./DevicesPage";
 import InfoPage from "./InfoPage";
 import MainPage from "./MainPage";
-import { RiTreasureMapLine } from "react-icons/ri";
+
 import WorkPage from "./WorkPage";
 import {
-  SettingOutlined,
   MessageOutlined,
   HomeOutlined,
   ReconciliationOutlined,
   EnvironmentOutlined,
   MenuOutlined,
-  PhoneOutlined,
-  WhatsAppOutlined,
 } from "@ant-design/icons";
 import { useEffect } from "react";
 import { Divider } from "antd";
 
-const LayoutPage = (props) => {
+const LayoutPage = () => {
   const { Header, Content, Footer } = Layout;
   const [page, setPage] = useState("main");
   const [winWidth, setWinwidth] = useState(
@@ -53,12 +50,14 @@ const LayoutPage = (props) => {
               id="menu1"
               theme="dark"
               mode="horizontal"
+              style={{ padding: 0 }}
               defaultSelectedKeys={["-1"]}
               overflowedIndicator={<MenuOutlined />}
             >
               <Menu.Item
                 key={-1}
                 title="Главная"
+                style={{ padding: "0 5px" }}
                 icon={<HomeOutlined />}
                 onClick={() => {
                   setPage("main");
@@ -68,6 +67,7 @@ const LayoutPage = (props) => {
               </Menu.Item>
 
               <Menu.Item
+                style={{ padding: "0 5px" }}
                 key="SubMenu"
                 title="Каталог пещер"
                 onClick={() => {
@@ -77,7 +77,11 @@ const LayoutPage = (props) => {
               >
                 <b>Каталог пещер</b>
               </Menu.Item>
-              <Menu.Item key={1} icon={<EnvironmentOutlined />}>
+              <Menu.Item
+                key={1}
+                style={{ padding: "0 10px" }}
+                icon={<EnvironmentOutlined />}
+              >
                 <a
                   onClick={() => {
                     setPage("devices");
@@ -88,7 +92,11 @@ const LayoutPage = (props) => {
                 </a>
               </Menu.Item>
 
-              <Menu.Item key={3} icon={<MessageOutlined />}>
+              <Menu.Item
+                key={3}
+                style={{ padding: "0 10px" }}
+                icon={<MessageOutlined />}
+              >
                 <a
                   onClick={() => {
                     setPage("info");
@@ -101,7 +109,7 @@ const LayoutPage = (props) => {
           </div>
         </Space>
       </Header>
-      <Content style={{ padding: "0 50px" }}>
+      <Content style={{ padding: "0 10px" }}>
         <Breadcrumb style={{ margin: "16px 0", "font-size": "large" }}>
           <Breadcrumb.Item>
             <b>Кадастр пещер Крыма</b>
@@ -113,7 +121,6 @@ const LayoutPage = (props) => {
           {page === "main" ? <MainPage /> : null}
           {page === "work" ? <WorkPage /> : null}
           {page === "devices" ? <DevicesPage /> : null}
-
           {page === "info" ? <InfoPage /> : null}
         </div>
       </Content>
