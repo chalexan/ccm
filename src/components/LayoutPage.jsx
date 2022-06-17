@@ -109,14 +109,15 @@ const LayoutPage = () => {
           </div>
         </Space>
       </Header>
-      <Content style={{ padding: "0 10px" }}>
+      <Content style={{ padding: 0 }}>
         <Breadcrumb style={{ margin: "16px 0", "font-size": "large" }}>
           <Breadcrumb.Item>
-            <b>Кадастр пещер Крыма</b>
-            <br />
+            <p style={{ padding: 5 }}>
+              <b>Кадастр пещер Крыма</b>
+            </p>
           </Breadcrumb.Item>
         </Breadcrumb>
-        <Divider orientationMargin={0} />
+        {/* <Divider orientationMargin={0} /> */}
         <div key={page} className="site-layout-content">
           {page === "main" ? <MainPage /> : null}
           {page === "work" ? <WorkPage /> : null}
