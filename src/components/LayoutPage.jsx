@@ -112,7 +112,7 @@ const LayoutPage = () => {
       <Content style={{ padding: 0 }}>
         <Breadcrumb style={{ margin: "16px 0", "font-size": "large" }}>
           <Breadcrumb.Item>
-            <p style={{ padding: 5 }}>
+            <p style={{ padding: "0 15px" }}>
               <b>Кадастр пещер Крыма</b>
             </p>
           </Breadcrumb.Item>
