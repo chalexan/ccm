@@ -15,6 +15,7 @@ import {
 } from "@ant-design/icons";
 import { useEffect } from "react";
 import { Divider } from "antd";
+import { imageOverlay } from "leaflet";
 
 const LayoutPage = () => {
   const { Header, Content, Footer } = Layout;
@@ -109,15 +110,23 @@ const LayoutPage = () => {
           </div>
         </Space>
       </Header>
-      <Content style={{ padding: 0 }}>
-        <Breadcrumb style={{ margin: "16px 0", "font-size": "large" }}>
+
+      <Content
+        className="backpic"
+        style={{
+          padding: 0,
+        }}
+      >
+        <Breadcrumb style={{ "font-size": "large" }}>
           <Breadcrumb.Item>
-            <p style={{ padding: "0 15px" }}>
-              <b>Кадастр пещер Крыма</b>
-            </p>
+            <div style={{ padding: "0 15px" }}>
+              <b>
+                {" "}
+                <font color="white">Кадастр пещер Крыма</font>
+              </b>
+            </div>
           </Breadcrumb.Item>
         </Breadcrumb>
-        {/* <Divider orientationMargin={0} /> */}
         <div key={page} className="site-layout-content">
           {page === "main" ? <MainPage /> : null}
           {page === "work" ? <WorkPage /> : null}

@@ -7,11 +7,15 @@ import {
   CaretRightOutlined,
   SearchOutlined,
 } from "@ant-design/icons";
+import Select from "rc-select";
 var json = require("../data/kadastr_karabi.json");
 
 const WorkPage = () => {
-  // Поиск по колонке
+  const { Option } = Select;
+  // Cчетчик пещер
+  const [cavesCount, setCavesCount] = useState(0);
 
+  // Поиск по колонке
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   let searchInput;
@@ -118,7 +122,7 @@ const WorkPage = () => {
       title: "Название",
       dataIndex: "cave_name",
       ...getColumnSearchProps("cave_name"),
-      fixed: "left",
+      // fixed: "left",
       // render: (record) => (
       //   <>
       //     <b>{record.cave_name} </b>
@@ -166,16 +170,41 @@ const WorkPage = () => {
           {record.location}
         </a>
       ),
-      fixed: "right",
+      // fixed: "right",
     },
   ];
 
   useEffect(() => {
-    console.log(json);
+    setCavesCount(json.length);
+    console.log(cavesCount);
   }, []);
 
   return (
     <div>
+      <div className="alphaback" style={{ padding: "0 15px" }}>
+        <span>
+          <Space>
+            Cпелеорайон:
+            <select>
+              <option key={0} value="Карабийский">
+                Карабийский
+              </option>
+              <option key={1} value="Ай-Петринский">
+                Ай-Петринский
+              </option>
+            </select>
+          </Space>
+        </span>
+      </div>
+      <div className="alphaback" style={{ padding: "0 15px" }}>
+        <i>Всего пещер в каталоге: </i>{" "}
+        <span>
+          {" "}
+          <i>
+            <b>{cavesCount}</b>
+          </i>
+        </span>{" "}
+      </div>
       <Table
         dataSource={json}
         columns={columns}

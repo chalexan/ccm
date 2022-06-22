@@ -28,3 +28,36 @@ code {
   float: right;
   margin: 16px 0 16px 24px;
 }
+
+.backpic {
+  background-image: url('./components/photoback.jpg');
+}
+
+.alphaback {
+  opacity: 0.7;
+ 	background: rgb(208, 212, 206); /* Цвет фона */
+}
+
+.shallow_gray {
+  background: rgb(168, 174, 166); /* Цвет фона */
+} 
+
+.deep_gray {
+      background: rgb(92, 103, 87); /* Цвет фона */
+     }
+
+ 
+     .ant-table-thead> tr >th{
+      font-weight: bold;
+       color: white;
+       background: black;
+       opacity: 0.9;
+
+     }
+
+     .ant-table {
+       font-weight: bold;
+      color: black;
+      background: rgb(208, 212, 206); /* Цвет фона */
+      opacity: 0.85;
+    }

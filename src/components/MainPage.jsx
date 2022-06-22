@@ -1,6 +1,6 @@
 const MainPage = () => {
   return (
-    <div>
+    <div className="alphaback">
       <p style={{ padding: "0 15px" }}>
         Данный ресурс является проектом cообщества FollowMyTrack
       </p>
