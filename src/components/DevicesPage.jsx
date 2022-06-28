@@ -75,6 +75,13 @@ const DevicesPage = () => {
 
   return (
     <>
+      {
+        coords && alert(`${coords.latitude}` + `${coords.longitude}`)
+        // <Marker
+        //   icon={Red_MARKER}
+        //   position={[coords.latitude, coords.longitude]}
+        // ></Marker>
+      }
       <Map
         className="simpleMap"
         //  bounds={defaultBounds}
@@ -116,13 +123,6 @@ const DevicesPage = () => {
             </Popup>
           </Marker>
         ))}
-        {
-          coords && alert(`coords.latitude` + `coords.longitude`)
-          // <Marker
-          //   icon={Red_MARKER}
-          //   position={[coords.latitude, coords.longitude]}
-          // ></Marker>
-        }
       </Map>
     </>
   );
