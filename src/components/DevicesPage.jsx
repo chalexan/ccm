@@ -11,6 +11,7 @@ import "leaflet/dist/leaflet.css";
 import convert from "geo-coordinates-parser";
 import L from "leaflet";
 import { Divider } from "antd";
+import { useState } from "react";
 var json = require("../data/kadastr_karabi.json");
 
 const DevicesPage = () => {
@@ -21,7 +22,7 @@ const DevicesPage = () => {
       },
       userDecisionTimeout: 5000,
     });
-
+  const [myGeo, setMyGeo] = useState(null);
   const position = [44.873, 34.575];
   // {lat: 45.20072775203464, lng: 34.092893600463874}
   const defaultBounds = [
@@ -57,6 +58,14 @@ const DevicesPage = () => {
     popupAnchor: [0, 0],
   });
 
+  const myGeoIcon = L.icon({
+    iconUrl:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAEw0lEQVRIia2VW2yTZRjHf+/39bRu7dp17VbY1g6BxW2AwDCDXQA6kSAhAQGjICAITGOEGxX1QjR6YTTEEOMBvUBQDCISCDGIGA5RAgMBF52UjdMO7diBHdr1sLbf60WXQWFTTHgu3/f//H/Pe3peuC2k318km5tfklKq3KcQaYBAwEki8SdQDywXhYWt9xUAIJub5wI/Ar0Isa7Q0vRLMmqcpwlpV4U87HdO8wHI+mtuVOU5EqatoswVumfAIOQjYMNxZYC1apcWRigF3RE6swzxkEn3YluXswchPgVyQa4UJZ4d/w/Q0GDs0cd9D2dEPLpIjN0fn6K0tZegScfZmrn91ba8TFpvQIYRLMoXorx83UgAZdjR8yuU/YF91qCQ1By5TGlrLwBWp4NqW14m0Rgkk5Bjg1hg/EjmALq0yreONWK1lidjiQ/35oy1A8zydaTmBGjTy1AkoCiQ7wQgGfpr2F0YfgXZ2TtQxNl3xy+adcb+AGUtvZS29qWEpV70pcWpTTXowaAnmYhzOH79IbljYua9ATTLypOx8q+3eauZebGd7z6rRUgJqoKYOeWu5Mhv55LbCiqtoH/zngCN702QvhPlj+uTko37fVjCccixoix9BOGyp2pIakN6cxTVG7BxwF2xSX41ZeF/ArotpsoH6zudxXU3oy9UTCT5xgrUl5cgSjwA1J+8wL5PviEWjgIgXHZeP3iRzeOWipYMx265s2LBvwIkol/R5Gd9LcqeYqnDpKamG87/zcEvd3Ol/hIV1TMwmk0pQJmXnN4IH3zbyLIpG/TNxpzv5c6pT9zuOdRz5IUtC0fPN9cVvPPWHveCZ13TbOb5j+VaAXC4nbi9hbjHFDLKWwBi8OKoKsKgMvp0A7p+hZo5C1VvuGPxrkfVg2/v97elr0ARkzHqRgGce37O56sLHHtvr8SSk02u23XLHEBKRL4DwzPVLKttZskhP2snrzdsmvD0oc1yswKDL1keXWUTs7f3DOX5/WaCiStA3nAHNxQ3e0FRwZZF389HSdQ2MW9RJU2Vdib1Xdt2aPzi9Yr8dfUoVO2YPLFq41DiH9cP47uWR6j/llkoDN2DPS0ag9Z2iMXBlgWAtWo62fEEy39vJrMxQl120Rq3/5xHIa7dRAgfUtQByGNnl9DTV0UoApeaYPDG0Nadglz1QzAMrhxw594qwGwCRZUzOrrJvBJFSkVFl1yuE7O3R4GnhoTByBYkMJCAQBc47FCUnzIuKQJPfqpV3BlJDbSk8MRiKHGJ2p8kYVEn3qWM9kQGAFAF5DsgGaex9hSvTHUQ8riGNwfoDgJgMOoBUOISEGqaunbSa2V1W454omcuIbs7wPITbcH3+WFMLmvaE2S19w5vDshAqilmeN2YVZVkhkCg+dK6qaZoT5qNqqpv60SaTyPsQWz6lbzaFE8JMqMjA250g05FrZpAVSTK5QwVqXEgDSAQbt3g0xNZVlCXYtKMaYqRQpk0DlnsRrjslAwEgejxG/lTT6cBEOJqPCHBoEeMngsY011MhhEBOG0Ipw0Ar9mYUJRIDdz54STkroiU9qDRPD071B8WpiY3gAQN0EQ4ZpZtAZ1QCWJIdKYBjLYuzVjYElA0m1koHf7ciosA/wCcUs3KqtmBiwAAAABJRU5ErkJggg==",
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, 0],
+  });
+
   const SuperCaveIcon = L.icon({
     iconUrl:
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACEElEQVRIie2UTWsTURSGnzOZyUdjENJW2kqluNGF4EZFxGJJbcSqiNGAVAXRP6BLtUK3rvwJ3boprv0BglC3xha/cKERSdNG8z0f18U0cZxM7JR22bO773nPfc49987AXuxmVOd5VHvC/HZqJKxRLRCvW3wTMJom4+lnVMLUaWEBNZM8kFaQihvcDVv3X8DKzNDYanbwKIBo5Du6glu7AsCW58rWXqiHJFBkPJkTjQUO7Qiwmhk8iJADjhdLqQdA0pMWZXFtRwBH5CagA7R+R+735CEH8DGbHl+ZHn79ZWoivi0A8nfm7apxWNniS3O29phR09KfAmdaem0uNOD91MiEKDnVWSuFNNajKFuo/ew2qrUb+pyIuu2auBP+BJpzA9830liLsfE1SflTiuqPhKuV4veAxKZl8sPFkeFQAPGMpxPNjSj1ktt9teju2awYRzyWiNOyrm4JKFwYGgV10q87juBs3oPZjFBfi9Gu6RGvR4nktgRolswS4hey/nlfkJx5e2VswCvovR51OWj/N3WDpYo7ouv7m5weMIMAsWTDmgRedRv2Zt/liYJM+6uW6waL5QQVW6jYwmI5wXLdCAKgKWb+WXsXUj5wDkh5NUsJL3/FUN4zAkuVGJZX7OZUti9AQ13yFxRaOiWr97GVbY1CM2DCcMx9KAEAYNbv/m72v+9iABiQiKmd71u0F/74AxFnpcyCh3MZAAAAAElFTkSuQmCC",
@@ -76,7 +85,7 @@ const DevicesPage = () => {
   return (
     <>
       {
-        coords && alert(`${coords.latitude}` + `${coords.longitude}`)
+        coords && setMyGeo([coords.latitude, coords.longitude])
         // <Marker
         //   icon={Red_MARKER}
         //   position={[coords.latitude, coords.longitude]}
@@ -96,6 +105,8 @@ const DevicesPage = () => {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        <Marker icon={myGeoIcon} position={myGeo}></Marker>
         {json.map((el) => (
           <Marker
             icon={
