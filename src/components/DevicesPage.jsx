@@ -116,17 +116,12 @@ const DevicesPage = () => {
             </Popup>
           </Marker>
         ))}
-        {
-          !isGeolocationAvailable
-            ? console.log("GPS not supported")
-            : !isGeolocationEnabled
-            ? console.log("GPS not support by browser")
-            : console.log(coords)
-          // <Marker
-          //   icon={Red_MARKER}
-          //   position={[coords.latitude, coords.longitude]}
-          // ></Marker>
-        }
+        {coords && (
+          <Marker
+            icon={Red_MARKER}
+            position={[coords.latitude, coords.longitude]}
+          ></Marker>
+        )}
       </Map>
     </>
   );
