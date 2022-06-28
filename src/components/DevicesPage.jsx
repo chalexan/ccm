@@ -106,7 +106,7 @@ const DevicesPage = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Marker icon={myGeoIcon} position={myGeo}></Marker>
+        {myGeo && <Marker icon={myGeoIcon} position={myGeo} />}
         {json.map((el) => (
           <Marker
             icon={
