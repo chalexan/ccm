@@ -116,12 +116,13 @@ const DevicesPage = () => {
             </Popup>
           </Marker>
         ))}
-        {coords && (
-          <Marker
-            icon={Red_MARKER}
-            position={[coords.latitude, coords.longitude]}
-          ></Marker>
-        )}
+        {
+          coords && alert(`coords.latitude` + `coords.longitude`)
+          // <Marker
+          //   icon={Red_MARKER}
+          //   position={[coords.latitude, coords.longitude]}
+          // ></Marker>
+        }
       </Map>
     </>
   );
