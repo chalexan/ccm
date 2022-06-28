@@ -1,5 +1,6 @@
 import { Map, TileLayer, Popup, Marker } from "react-leaflet";
 import { latLngBounds } from "leaflet";
+import { useGeolocated } from "react-geolocated";
 import {
   CaretDownOutlined,
   CaretRightOutlined,
@@ -13,6 +14,14 @@ import { Divider } from "antd";
 var json = require("../data/kadastr_karabi.json");
 
 const DevicesPage = () => {
+  const { coords, isGeolocationAvailable, isGeolocationEnabled } =
+    useGeolocated({
+      positionOptions: {
+        enableHighAccuracy: false,
+      },
+      userDecisionTimeout: 5000,
+    });
+
   const position = [44.873, 34.575];
   // {lat: 45.20072775203464, lng: 34.092893600463874}
   const defaultBounds = [
@@ -107,6 +116,17 @@ const DevicesPage = () => {
             </Popup>
           </Marker>
         ))}
+        {
+          !isGeolocationAvailable
+            ? console.log("GPS not supported")
+            : !isGeolocationEnabled
+            ? console.log("GPS not support by browser")
+            : console.log(coords)
+          // <Marker
+          //   icon={Red_MARKER}
+          //   position={[coords.latitude, coords.longitude]}
+          // ></Marker>
+        }
       </Map>
     </>
   );
