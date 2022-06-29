@@ -24,7 +24,7 @@ const DevicesPage = () => {
     });
   const [myGeo, setMyGeo] = useState([]);
   const position = [44.873, 34.575];
-  // {lat: 45.20072775203464, lng: 34.092893600463874}
+  // {lat: 45.20072775203464, lng: 34.092893600463874}
   const defaultBounds = [
     [44.745197, 33.367692],
     [33.862273, 45.209966],
@@ -74,11 +74,9 @@ const DevicesPage = () => {
   });
 
   return (
-    <div key={coords}>
+    <div>
       <Map
         className="simpleMap"
-        //  bounds={defaultBounds}
-        // boundsOptions={{ padding: [50, 50] }}
         center={position}
         zoom={11}
         key={0}
