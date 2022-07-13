@@ -1,5 +1,6 @@
 import { Map, TileLayer, Popup, Marker } from "react-leaflet";
 import { latLngBounds } from "leaflet";
+import { Space } from "antd";
 import { useGeolocated } from "react-geolocated";
 import {
   CaretDownOutlined,
@@ -12,11 +13,28 @@ import convert from "geo-coordinates-parser";
 import L from "leaflet";
 import { Divider } from "antd";
 import { useState, useEffect } from "react";
+import Select from "rc-select";
 import { concat } from "geo-coordinates-parser/testformats";
 var jsonKarabi = require("../data/kadastr_karabi.json");
 var jsonBabugan = require("../data/kadastr_babugan.json");
 var json = [...jsonBabugan, ...jsonKarabi];
 const DevicesPage = () => {
+  const [layer, setlayer] = useState(
+    "https://cdn.lima-labs.com/{z}/{x}/{y}.png?api=demo"
+  );
+
+  const setLayerHandle = (layerCode) => {
+    if (layerCode === "sattelite") {
+      setlayer(
+        "https://{s}.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      );
+    }
+    if (layerCode === "osm") {
+      setlayer("https://cdn.lima-labs.com/{z}/{x}/{y}.png?api=demo");
+    }
+    return console.log("caveDistChange");
+  };
+
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
       positionOptions: {
@@ -77,6 +95,21 @@ const DevicesPage = () => {
 
   return (
     <div>
+      <div className="alphaback" style={{ padding: "0 15px" }}>
+        <span>
+          <Space>
+            Cлой карты:
+            <select onChange={(el) => setLayerHandle(el.target.value)}>
+              <option key={0} value="osm">
+                OpenStreetMap
+              </option>
+              <option key={1} value="sattelite">
+                Cпутник
+              </option>
+            </select>
+          </Space>
+        </span>
+      </div>
       <Map
         className="simpleMap"
         center={position}
@@ -86,12 +119,12 @@ const DevicesPage = () => {
       >
         {console.log()}
         <TileLayer
-          attribution={myGeo[0] + " " + myGeo[1]}
+          attribution={"FollowMyTrack " + myGeo[0] + " " + myGeo[1]}
           className="basemap"
           maxNativeZoom={19}
           maxZoom={19}
           subdomains={["clarity"]}
-          url="https://{s}.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+          url={layer}
         />
 
         {myGeo.length > 0 && <Marker icon={myGeoIcon} position={myGeo} />}
