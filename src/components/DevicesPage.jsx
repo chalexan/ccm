@@ -12,8 +12,10 @@ import convert from "geo-coordinates-parser";
 import L from "leaflet";
 import { Divider } from "antd";
 import { useState, useEffect } from "react";
-var json = require("../data/kadastr_karabi.json");
-
+import { concat } from "geo-coordinates-parser/testformats";
+var jsonKarabi = require("../data/kadastr_karabi.json");
+var jsonBabugan = require("../data/kadastr_babugan.json");
+var json = [...jsonBabugan, ...jsonKarabi];
 const DevicesPage = () => {
   const { coords, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({

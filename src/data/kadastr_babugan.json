@@ -1,0 +1,258 @@
+[
+    {
+     "№": 1,
+     "cave_name": "399-3",
+     "deep": 23,
+     "length": 70,
+     "location": "44° 38′ 44.04″  34° 17′ 4.41″",
+     "alt_entrance": 1420
+    },
+    {
+     "№": 2,
+     "cave_name": "403-3",
+     "deep": 12,
+     "length": 18,
+     "location": "44° 37′ 32.57″  34° 16′ 22.86″",
+     "alt_entrance": 1495
+    },
+    {
+     "№": 3,
+     "cave_name": "408-1",
+     "deep": 12,
+     "length": 23,
+     "location": "44° 36′ 52.03″  34° 16′ 19.41″",
+     "alt_entrance": 1465
+    },
+    {
+     "№": 4,
+     "cave_name": "400-3",
+     "deep": 11,
+     "length": 21,
+     "location": "44° 38′ 41.89″  34° 18′ 12.63″",
+     "alt_entrance": 1343
+    },
+    {
+     "№": 5,
+     "cave_name": "Куш-кая",
+     "deep": 12,
+     "length": 32,
+     "location": "44° 38′ 44.37″  34° 18′ 52.77″",
+     "alt_entrance": 1285
+    },
+    {
+     "№": 6,
+     "cave_name": "400-1",
+     "deep": 10,
+     "length": 27,
+     "location": "44° 38′ 49.04″  34° 18′ 14.41″",
+     "alt_entrance": 1385
+    },
+    {
+     "№": 7,
+     "cave_name": "399-4",
+     "deep": 11,
+     "length": 20,
+     "location": "44° 38′ 29.28″  34° 17′ 6.24″",
+     "alt_entrance": 1413
+    },
+    {
+     "№": 8,
+     "cave_name": "Чучельская",
+     "deep": 15,
+     "length": 25,
+     "location": "44° 39′ 12.06″  34° 14′ 23.56″",
+     "alt_entrance": 1224
+    },
+    {
+     "№": 9,
+     "cave_name": "399-2",
+     "deep": 5,
+     "length": 32,
+     "location": "44° 38′ 49.09″  34° 17′ 8.69″",
+     "alt_entrance": 1413
+    },
+    {
+     "№": 10,
+     "cave_name": "400-5",
+     "deep": 12,
+     "length": 18,
+     "location": "44° 38′ 27.04″  34° 18′ 32.41″",
+     "alt_entrance": 1318
+    },
+    {
+     "№": 11,
+     "cave_name": "399-6",
+     "deep": 10,
+     "length": 13,
+     "location": "44° 38′ 32.04″  34° 17′ 21.41″",
+     "alt_entrance": 1394
+    },
+    {
+     "№": 12,
+     "cave_name": "Качинская",
+     "deep": 8,
+     "length": 14,
+     "location": "44° 37′ 27.03″  34° 14′ 34.41″",
+     "alt_entrance": 1025
+    },
+    {
+     "№": 13,
+     "cave_name": "403-8",
+     "deep": 2,
+     "length": 5,
+     "location": "44° 37′ 15.03″  34° 16′ 9.41″",
+     "alt_entrance": 1479
+    },
+    {
+     "№": 14,
+     "cave_name": "Вернадского",
+     "deep": 44,
+     "length": 90,
+     "location": "44° 36′ 39.03″  34° 15′ 34.41″",
+     "alt_entrance": 1481
+    },
+    {
+     "№": 15,
+     "cave_name": "Ферсмана",
+     "deep": 41,
+     "length": 51,
+     "location": "44° 37′ 29.04″  34° 16′ 24.41″",
+     "alt_entrance": 1474
+    },
+    {
+     "№": 16,
+     "cave_name": "399-1",
+     "deep": 30,
+     "length": 70,
+     "location": "44° 38′ 50.59″  34° 17′ 3.82″",
+     "alt_entrance": 1401
+    },
+    {
+     "№": 17,
+     "cave_name": "403-7",
+     "deep": 23,
+     "length": 26,
+     "location": "44° 37′ 19.04″  34° 16′ 38.41″",
+     "alt_entrance": 1470
+    },
+    {
+     "№": 18,
+     "cave_name": "399-5",
+     "deep": 21,
+     "length": 26,
+     "location": "44° 38′ 30.06″  34° 17′ 20.04″",
+     "alt_entrance": 1400
+    },
+    {
+     "№": 19,
+     "cave_name": "403-1",
+     "deep": 21,
+     "length": 36,
+     "location": "44° 37′ 36.04″   34° 16′ 4.41″",
+     "alt_entrance": 1472
+    },
+    {
+     "№": 20,
+     "cave_name": "403-9",
+     "deep": 21,
+     "length": 31,
+     "location": "44° 37′ 8.04″   34° 16′ 4.41″",
+     "alt_entrance": 1476
+    },
+    {
+     "№": 21,
+     "cave_name": "407-1",
+     "deep": 23,
+     "length": 27,
+     "location": "44° 36′ 49.05″  34° 15′ 23.70″",
+     "alt_entrance": 1495
+    },
+    {
+     "№": 22,
+     "cave_name": "395-2",
+     "deep": 21,
+     "length": 40,
+     "location": "44° 39′ 13.04″  34° 18′ 4.41″",
+     "alt_entrance": 1303
+    },
+    {
+     "№": 23,
+     "cave_name": "394-1",
+     "deep": 14,
+     "length": 19,
+     "location": "44° 39′ 17.04″  34° 17′ 34.41″",
+     "alt_entrance": 1301
+    },
+    {
+     "№": 24,
+     "cave_name": "400-4",
+     "deep": 13,
+     "length": 21,
+     "location": "44° 38′ 34.04″  34° 18′ 4.41″",
+     "alt_entrance": 1386
+    },
+    {
+     "№": 25,
+     "cave_name": "395-1",
+     "deep": 12,
+     "length": 20,
+     "location": "44° 39′ 8.93″  34° 18′ 0.89″",
+     "alt_entrance": 1319
+    },
+    {
+     "№": 26,
+     "cave_name": "408-2",
+     "deep": 15,
+     "length": 20,
+     "location": "44° 36′ 41.04″  34° 16′ 9.41″",
+     "alt_entrance": 1428
+    },
+    {
+     "№": 27,
+     "cave_name": "403-2",
+     "deep": 8,
+     "length": 16,
+     "location": "44° 37′ 51.12″  34° 16′ 49.01″",
+     "alt_entrance": 1395
+    },
+    {
+     "№": 28,
+     "cave_name": "403-6",
+     "deep": 6,
+     "length": 15,
+     "location": "44° 37′ 28.04″  34° 16′ 44.41″",
+     "alt_entrance": 1433
+    },
+    {
+     "№": 29,
+     "cave_name": "70 летия СССР",
+     "deep": 138,
+     "length": 150,
+     "location": "44° 37′ 16.04″  34° 16′ 21.41″",
+     "alt_entrance": 1428
+    },
+    {
+     "№": 30,
+     "cave_name": "Подкрепление не пришло",
+     "deep": 91,
+     "length": 155,
+     "location": "44° 38′ 46.40″  34° 17′ 34.90″",
+     "alt_entrance": 1415
+    },
+    {
+     "№": 31,
+     "cave_name": "405-1",
+     "deep": 50,
+     "length": 79,
+     "location": "44° 36′ 58.04″  34° 17′ 56.41″",
+     "alt_entrance": 1138
+    },
+    {
+     "№": 32,
+     "cave_name": "Спортивная",
+     "deep": 49,
+     "length": 68,
+     "location": "44° 38′ 46.04″  34° 18′ 19.41″",
+     "alt_entrance": 1343
+    }
+   ]

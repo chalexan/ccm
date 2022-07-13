@@ -8,9 +8,11 @@ import {
   SearchOutlined,
 } from "@ant-design/icons";
 import Select from "rc-select";
-var json = require("../data/kadastr_karabi.json");
+var jsonKarabi = require("../data/kadastr_karabi.json");
+var jsonBabugan = require("../data/kadastr_babugan.json");
 
 const WorkPage = () => {
+  const [caveDist, setCaveDist] = useState(jsonKarabi);
   const { Option } = Select;
   // Cчетчик пещер
   const [cavesCount, setCavesCount] = useState(0);
@@ -122,18 +124,6 @@ const WorkPage = () => {
       title: "Название",
       dataIndex: "cave_name",
       ...getColumnSearchProps("cave_name"),
-      // fixed: "left",
-      // render: (record) => (
-      //   <>
-      //     <b>{record.cave_name} </b>
-      //     <br />
-      //     <font color="red">▼</font> {record.deep}{" "}
-      //     <span>
-      //       <font color="green">➤</font>{" "}
-      //     </span>{" "}
-      //     {record.length}
-      //   </>
-      // ),
       key: "name",
     },
     {
@@ -175,9 +165,23 @@ const WorkPage = () => {
   ];
 
   useEffect(() => {
-    setCavesCount(json.length);
-    console.log(cavesCount);
+    setCaveDist(jsonKarabi);
+    setCavesCount(jsonKarabi.length);
+    console.log("caves_count: ", cavesCount);
   }, []);
+
+  const setDistHandle = (distCode) => {
+    console.log("inout cide:", distCode);
+    if (distCode === "karabi") {
+      setCaveDist(jsonKarabi);
+      setCavesCount(jsonKarabi.length);
+    }
+    if (distCode === "babugan") {
+      setCaveDist(jsonBabugan);
+      setCavesCount(jsonBabugan.length);
+    }
+    return console.log("caveDistChange");
+  };
 
   return (
     <div>
@@ -185,12 +189,12 @@ const WorkPage = () => {
         <span>
           <Space>
             Cпелеорайон:
-            <select>
-              <option key={0} value="Карабийский">
+            <select onChange={(el) => setDistHandle(el.target.value)}>
+              <option key={0} value="karabi">
                 Карабийский
               </option>
-              <option key={1} value="Ай-Петринский">
-                Ай-Петринский
+              <option key={1} value="babugan">
+                Бабуганский
               </option>
             </select>
           </Space>
@@ -206,7 +210,7 @@ const WorkPage = () => {
         </span>{" "}
       </div>
       <Table
-        dataSource={json}
+        dataSource={caveDist}
         columns={columns}
         pagination={{ position: ["none", "bottomCenter"] }}
       ></Table>
