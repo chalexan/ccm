@@ -80,7 +80,7 @@ const DevicesPage = () => {
       <Map
         className="simpleMap"
         center={position}
-        zoom={11}
+        zoom={9}
         key={0}
         onclick={(event) => console.log(event.latlng)}
       >
