@@ -1,0 +1,202 @@
+[
+  {
+    "№": 1,
+    "cave_name": "Таврская",
+    "deep": 18,
+    "length": 507,
+    "location": "44° 39′ 18.62″ 33° 52′ 39.04″",
+    "alt_entrance": 560
+  },
+  {
+    "№": 2,
+    "cave_name": "Мангупская-1",
+    "deep": 10,
+    "length": 415,
+    "location": "44° 35′ 26.90″ 33° 48′ 16.90″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 3,
+    "cave_name": "Голубиная",
+    "deep": 15,
+    "length": 69,
+    "location": "44° 44′ 44.03″ 33° 55′ 44.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 4,
+    "cave_name": "Мангупская-2",
+    "deep": 2,
+    "length": 60,
+    "location": "44° 35′ 20.01″  33° 48′ 22.40″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 5,
+    "cave_name": "Научная",
+    "deep": 9,
+    "length": 48,
+    "location": "44° 44′ 45.03″  33° 55′ 41.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 6,
+    "cave_name": "Капку-кую",
+    "deep": 22,
+    "length": 47,
+    "location": "44° 44′ 46.03″  33° 55′ 47.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 7,
+    "cave_name": "Бахчисарайская",
+    "deep": 16,
+    "length": 32,
+    "location": "44° 47′ 29.03″  33° 59′ 44.38″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 8,
+    "cave_name": "Летучих мышей",
+    "deep": 3,
+    "length": 20,
+    "location": "44° 44′ 51.34″  33° 56′ 1.04″",
+    "alt_entrance": 501
+  },
+  {
+    "№": 9,
+    "cave_name": "Беш-Кош-2",
+    "deep": 8,
+    "length": 15,
+    "location": "44° 44′ 50.46″  33° 55′ 57.61″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 10,
+    "cave_name": "Беш-Кош-4",
+    "deep": 1,
+    "length": 15,
+    "location": "44° 44′ 52.71″  33° 56′ 4.83″",
+    "alt_entrance": 517
+  },
+  {
+    "№": 11,
+    "cave_name": "Беш-Кош-1",
+    "deep": 10,
+    "length": 13,
+    "location": "44° 44′ 49.65″  33° 55′ 53.82″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 12,
+    "cave_name": "Беш-Кош-5",
+    "deep": 5,
+    "length": 12,
+    "location": "44° 44′ 49.24″  33° 55′ 49.50″",
+    "alt_entrance": 475
+  },
+  {
+    "№": 13,
+    "cave_name": "Подарочная",
+    "deep": 0,
+    "length": 0,
+    "location": "44° 39′ 14.35″  33° 52′ 16.79″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 14,
+    "cave_name": "Эски-Кермен-11",
+    "deep": 0,
+    "length": 0,
+    "location": "44° 36′ 32.92″  33° 44′ 27.92″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 15,
+    "cave_name": "Грот МК-14",
+    "deep": 10,
+    "length": 17,
+    "location": "44° 35′ 31.01″  33° 48′ 36.40″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 16,
+    "cave_name": "Грот Замолчи-7(8)",
+    "deep": 2,
+    "length": 10,
+    "location": "44° 36′ 34.64″  33° 45′ 2.60″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 17,
+    "cave_name": "Грот Замолчи-6",
+    "deep": 5,
+    "length": 9,
+    "location": "44° 36′ 42.17″  33° 44′ 44.72″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 18,
+    "cave_name": "Грот Орта-Кая-1",
+    "deep": 1,
+    "length": 8,
+    "location": "44° 44′ 49.03″  33° 55′ 34.38″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 19,
+    "cave_name": "Грот Замолчи-1(2-3)",
+    "deep": 0,
+    "length": 0,
+    "location": "44° 36′ 55.33″  33° 44′ 29.04″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 20,
+    "cave_name": "Грот Балли-Коба",
+    "deep": 0,
+    "length": 0,
+    "location": "44° 36′ 31.13″  33° 45′ 52.71″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 21,
+    "cave_name": "Грот Сюйрень",
+    "deep": 3,
+    "length": 45,
+    "location": "44° 39′ 15.40″  33° 48′ 31.90″",
+    "alt_entrance": 110
+  },
+  {
+    "№": 22,
+    "cave_name": "Высокая",
+    "deep": 50,
+    "length": 130,
+    "location": "44° 39′ 47.20″  33° 55′ 17.90″",
+    "alt_entrance": 358
+  },
+  {
+    "№": 23,
+    "cave_name": "Орта-Кая-2",
+    "deep": 40,
+    "length": 84,
+    "location": "44° 44′ 45.03″  33° 55′ 45.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 24,
+    "cave_name": "Трещинная",
+    "deep": 0,
+    "length": 0,
+    "location": "44° 41′ 40.60″  33° 53′ 14.41″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 25,
+    "cave_name": "Чардаклы",
+    "deep": 0,
+    "length": 0,
+    "location": "44° 36′ 48.14″  33° 47′ 23.86″",
+    "alt_entrance": ""
+  }
+]

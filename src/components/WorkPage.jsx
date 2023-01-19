@@ -10,6 +10,10 @@ import {
 import Select from "rc-select";
 var jsonKarabi = require("../data/kadastr_karabi.json");
 var jsonBabugan = require("../data/kadastr_babugan.json");
+var jsonBahchisaraj = require("../data/kadastr_bahchisaraj.json");
+var jsonDemerdji = require("../data/kadastr_demerdji.json");
+var jsonDolgorukovka = require("../data/kadastr_dolgorukovskaya.json");
+var md5 = require("md5");
 
 const WorkPage = () => {
   const [caveDist, setCaveDist] = useState(jsonKarabi);
@@ -158,6 +162,7 @@ const WorkPage = () => {
           }}
         >
           {record.location}
+          {/* {verifyAccess() ? record.location : "Доступ закрыт"} */}
         </a>
       ),
       // fixed: "right",
@@ -180,7 +185,28 @@ const WorkPage = () => {
       setCaveDist(jsonBabugan);
       setCavesCount(jsonBabugan.length);
     }
+    if (distCode === "bahchi") {
+      setCaveDist(jsonBahchisaraj);
+      setCavesCount(jsonBahchisaraj.length);
+    }
+    if (distCode === "demerdji") {
+      setCaveDist(jsonDemerdji);
+      setCavesCount(jsonDemerdji.length);
+    }
+    if (distCode === "dolgaya") {
+      setCaveDist(jsonDolgorukovka);
+      setCavesCount(jsonDolgorukovka.length);
+    }
     return console.log("caveDistChange");
+  };
+
+  const verifyAccess = () => {
+    if (
+      localStorage.getItem("pass") === "b934c427ec6c9fd7dec550de32855437" ||
+      md5(new Date().toLocaleString)
+    )
+      return true;
+    return false;
   };
 
   return (
@@ -195,6 +221,15 @@ const WorkPage = () => {
               </option>
               <option key={1} value="babugan">
                 Бабуганский
+              </option>
+              <option key={2} value="bahchi">
+                Бахчисарайский
+              </option>
+              <option key={3} value="demerdji">
+                Демерджинский
+              </option>
+              <option key={4} value="dolgaya">
+                Долгоруковский
               </option>
             </select>
           </Space>

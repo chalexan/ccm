@@ -17,7 +17,16 @@ import Select from "rc-select";
 import { concat } from "geo-coordinates-parser/testformats";
 var jsonKarabi = require("../data/kadastr_karabi.json");
 var jsonBabugan = require("../data/kadastr_babugan.json");
-var json = [...jsonBabugan, ...jsonKarabi];
+var jsonBahchisaraj = require("../data/kadastr_bahchisaraj.json");
+var jsonDemerdji = require("../data/kadastr_demerdji.json");
+var jsonDolgorukovka = require("../data/kadastr_dolgorukovskaya.json");
+var json = [
+  ...jsonBabugan,
+  ...jsonKarabi,
+  ...jsonBahchisaraj,
+  ...jsonDemerdji,
+  ...jsonDolgorukovka,
+];
 const DevicesPage = () => {
   const [layer, setlayer] = useState(
     "https://cdn.lima-labs.com/{z}/{x}/{y}.png?api=demo"

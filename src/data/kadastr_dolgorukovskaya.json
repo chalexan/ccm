@@ -1,0 +1,330 @@
+[
+  {
+    "№": 1,
+    "cave_name": "Кизил-Коба (Красная)",
+    "deep": 238,
+    "length": 22437,
+    "location": "44° 52′ 12.76″  34° 20′ 38.49″",
+    "alt_entrance": 596
+  },
+  {
+    "№": 2,
+    "cave_name": "Алешина вода",
+    "deep": 40,
+    "length": 3200,
+    "location": "44° 51′ 41.05″  34° 20′ 52.39″",
+    "alt_entrance": 580
+  },
+  {
+    "№": 3,
+    "cave_name": "Голубиная",
+    "deep": 176,
+    "length": 5952,
+    "location": "44° 52′ 54.77″  34° 20′ 50.27″",
+    "alt_entrance": 791
+  },
+  {
+    "№": 4,
+    "cave_name": "Провал",
+    "deep": 101,
+    "length": 2232,
+    "location": "44° 50′ 50.05″  34° 23′ 28.14″",
+    "alt_entrance": 930
+  },
+  {
+    "№": 5,
+    "cave_name": "Мар-Хосар",
+    "deep": 112,
+    "length": 1294,
+    "location": "44° 50′ 56.92″  34° 22′ 41.63″",
+    "alt_entrance": 911
+  },
+  {
+    "№": 6,
+    "cave_name": "Ени-Сала-3",
+    "deep": 18,
+    "length": 585,
+    "location": "44° 50′ 50.05″  34° 20′ 58.39″",
+    "alt_entrance": 550
+  },
+  {
+    "№": 7,
+    "cave_name": "Грифон",
+    "deep": 20,
+    "length": 321,
+    "location": "44° 52′ 4.80″  34° 20′ 44.44″",
+    "alt_entrance": 553
+  },
+  {
+    "№": 8,
+    "cave_name": "Ени-Сала-1",
+    "deep": 17,
+    "length": 113,
+    "location": "44° 50′ 50.04″  34° 21′ 24.65″",
+    "alt_entrance": 740
+  },
+  {
+    "№": 9,
+    "cave_name": "Партизанская",
+    "deep": 19,
+    "length": 130,
+    "location": "44° 51′ 54.06″  34° 24′ 35.40″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 10,
+    "cave_name": "Снежная",
+    "deep": 24,
+    "length": 84,
+    "location": "44° 52′ 50.83″  34° 20′ 48.56″",
+    "alt_entrance": 785
+  },
+  {
+    "№": 11,
+    "cave_name": "Матуба",
+    "deep": 7,
+    "length": 100,
+    "location": "44° 52′ 5.33″ 34° 19′ 54.72″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 12,
+    "cave_name": "Трещинная",
+    "deep": 35,
+    "length": 75,
+    "location": "44° 52′ 6.06″ 34° 21′ 44.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 13,
+    "cave_name": "Ени-Сала-2",
+    "deep": 13,
+    "length": 75,
+    "location": "44° 51′ 8.39″  34° 21′ 29.53″",
+    "alt_entrance": 740
+  },
+  {
+    "№": 14,
+    "cave_name": "Дружная",
+    "deep": 15,
+    "length": 110,
+    "location": "44° 54′ 10.05″  34° 18′ 24.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 15,
+    "cave_name": "Ларисанина",
+    "deep": 63,
+    "length": 2,
+    "location": "44° 53′ 7.96″  34° 23′ 51.43″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 16,
+    "cave_name": "Арочная",
+    "deep": 28,
+    "length": 50,
+    "location": "44° 51′ 6.06″ 34° 24′ 44.40″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 17,
+    "cave_name": "Охотничья",
+    "deep": 3,
+    "length": 50,
+    "location": "44° 52′ 14.06″  34° 20′ 33.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 18,
+    "cave_name": "545-5",
+    "deep": 15,
+    "length": 40,
+    "location": "44° 52′ 12.05″  34° 21′ 43.39″",
+    "alt_entrance": 810
+  },
+  {
+    "№": 19,
+    "cave_name": "547-7",
+    "deep": 11,
+    "length": 24,
+    "location": "44° 52′ 50.00″  34° 21′ 45.00″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 20,
+    "cave_name": "Нора",
+    "deep": 2,
+    "length": 20,
+    "location": "44° 53′ 10.06″  34° 23′ 42.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 21,
+    "cave_name": "548-3",
+    "deep": 9,
+    "length": 20,
+    "location": "44° 52′ 16.06″  44° 52′ 16.06″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 22,
+    "cave_name": "547-3",
+    "deep": 14,
+    "length": 20,
+    "location": "44° 52′ 45.06″  34° 21′ 46.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 23,
+    "cave_name": "647-1",
+    "deep": 7,
+    "length": 20,
+    "location": "44° 49′ 0.06″  34° 25′ 24.40″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 24,
+    "cave_name": "546-3",
+    "deep": 8,
+    "length": 16,
+    "location": "44° 52′ 51.06″  34° 20′ 52.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 25,
+    "cave_name": "553-1",
+    "deep": 8,
+    "length": 12,
+    "location": "44° 51′ 52.06″  34° 22′ 5.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 26,
+    "cave_name": "547-4",
+    "deep": 6,
+    "length": 14,
+    "location": "44° 52′ 42.06″  34° 21′ 44.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 27,
+    "cave_name": "651-1",
+    "deep": 5,
+    "length": 10,
+    "location": "44° 48′ 43.06″  34° 25′ 58.40″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 28,
+    "cave_name": "548-1",
+    "deep": 7,
+    "length": 16,
+    "location": "44° 52′ 34.06″ 34° 22′ 1.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 29,
+    "cave_name": "546-1",
+    "deep": 5,
+    "length": 8,
+    "location": "44° 52′ 55.06″  34° 20′ 52.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 30,
+    "cave_name": "601-2",
+    "deep": 1,
+    "length": 6,
+    "location": "44° 56′ 51.06″  34° 24′ 3.38″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 31,
+    "cave_name": "Аверкиева",
+    "deep": 139,
+    "length": 425,
+    "location": "44° 52′ 42.36″ 34° 21′ 1.92″",
+    "alt_entrance": 790
+  },
+  {
+    "№": 32,
+    "cave_name": "601-1",
+    "deep": 5,
+    "length": 20,
+    "location": "44° 54′ 53.06″ 34° 24′ 3.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 33,
+    "cave_name": "601-3",
+    "deep": 3,
+    "length": 7,
+    "location": "44° 56′ 53.06″  34° 24′ 2.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 34,
+    "cave_name": "553-3",
+    "deep": 2,
+    "length": 6,
+    "location": "44° 51′ 9.05″  34° 22′ 6.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 35,
+    "cave_name": "Лю-Хосар",
+    "deep": 48,
+    "length": 110,
+    "location": "44° 52′ 44.62″  34° 20′ 59.10″",
+    "alt_entrance": 790
+  },
+  {
+    "№": 36,
+    "cave_name": "СКС-40",
+    "deep": 40,
+    "length": 54,
+    "location": "44° 51′ 18.06″   34° 24′ 46.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 37,
+    "cave_name": "Ева",
+    "deep": 26,
+    "length": 31,
+    "location": "44° 51′ 34.06″  34° 22′ 19.39″",
+    "alt_entrance": 885
+  },
+  {
+    "№": 38,
+    "cave_name": "548-4",
+    "deep": 9,
+    "length": 15,
+    "location": "44° 52′ 6.06″ 34° 22′ 20.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 39,
+    "cave_name": "559-2",
+    "deep": 10,
+    "length": 17,
+    "location": "44° 55′ 49.03″  34° 24′ 44.02″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 40,
+    "cave_name": "574-2",
+    "deep": 6,
+    "length": 15,
+    "location": "44° 52′ 39.05″  34° 21′ 1.39″",
+    "alt_entrance": ""
+  },
+  {
+    "№": 41,
+    "cave_name": "548-2",
+    "deep": "",
+    "length": "",
+    "location": "44° 52′ 29.06″  34° 22′ 0.39″",
+    "alt_entrance": ""
+  }
+]
