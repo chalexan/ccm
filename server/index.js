@@ -18,7 +18,7 @@ const app = express()
 app.use(express.json());
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads/')));
 app.use(
     cors({
         origin: true,
@@ -31,7 +31,7 @@ connect();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, 'public/uploads/'))
+        cb(null, path.join(__dirname, 'uploads/'))
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
