@@ -43,7 +43,8 @@ const LayoutPage = () => {
   const [winWidth, setWinwidth] = useState(
     document.documentElement.scrollWidth
   );
-  const URL = "http://localhost:8080";
+  const URL = "http://158.160.19.224:8080";
+  //const URL = "http://localhost:8080";
   const [avatarPreview, setAvatarPreview] = useState("");
   const uploadFile = (e) => {
     if (true) {
@@ -57,8 +58,11 @@ const LayoutPage = () => {
           },
         })
         .then((res) => {
-          setAvatarPreview(`${res.data.image_path}`);
-          console.log("path_avatar: ", `${res.data.image_path}`);
+          setAvatarPreview(`${URL}/uploads/${res.data.image_path}`);
+          console.log(
+            "path_avatar: ",
+            `${URL}"/uploads/"${res.data.image_path}`
+          );
         })
         .catch((err) => {
           message.error(err);
@@ -234,8 +238,7 @@ const LayoutPage = () => {
                   className="avatar-uploader"
                   showUploadList={false}
                 >
-                  <a href={avatarPreview}>{avatarPreview}</a>
-                  {avatarPreview && <Image size="large" src={avatarPreview} />}
+                  {avatarPreview && <Avatar size="large" src={avatarPreview} />}
                   <span> | </span>
                   <Button size="large" icon={<UploadOutlined />}></Button>
                 </Upload>

@@ -12,13 +12,13 @@ const { connect } = require('./connectDb');
 
 const localIP = Object.values(require('os').networkInterfaces()).reduce((r, list) => r.concat(list.reduce((rr, i) => rr.concat(i.family === 'IPv4' && !i.internal && i.address || []), [])), [])
 const port = 8080;
-
+const pathway = path.join(__dirname, 'uploads');
 const app = express()
 
 app.use(express.json());
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'uploads/')));
+app.use('/uploads', express.static(pathway));
 app.use(
     cors({
         origin: true,
@@ -42,9 +42,9 @@ const upload = multer({ storage: storage })
 
 //Загрузка фото
 app.post('/upload', upload.fields([{ name: "image-file", maxCount: 1 }]), async (req, res) => {
-    console.log('Incoming POST ./signin ->', req.files['image-file'][0].path)
+    console.log('Incoming POST ./signin ->', req.files['image-file'][0])
     return res.json({
-        image_path: req.files['image-file'][0].path
+        image_path: req.files['image-file'][0].filename
     });
 })
 
