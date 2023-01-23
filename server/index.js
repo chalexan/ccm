@@ -15,7 +15,6 @@ const port = 8080;
 
 const app = express()
 
-app.use(express.static(__dirname));
 app.use(express.json());
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: false }));
@@ -32,7 +31,7 @@ connect();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, '/uploads/'))
+        cb(null, path.join(__dirname, 'public/uploads/'))
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
