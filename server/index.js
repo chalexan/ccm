@@ -11,7 +11,7 @@ const { connect } = require('./connectDb');
 
 
 const localIP = Object.values(require('os').networkInterfaces()).reduce((r, list) => r.concat(list.reduce((rr, i) => rr.concat(i.family === 'IPv4' && !i.internal && i.address || []), [])), [])
-const port = 8080;
+const port = 80;
 const pathway = path.join(__dirname, 'uploads');
 const app = express()
 
