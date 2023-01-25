@@ -1,4 +1,6 @@
-import { Image, Space, message, Avatar } from "antd";
+import * as constant from "../lib/constant";
+import { loginReq, signinReq } from "../lib/apiReq";
+import { Space, message, Avatar } from "antd";
 import { Upload } from "antd";
 import ImgCrop from "antd-img-crop";
 import {
@@ -16,8 +18,8 @@ import { useState } from "react";
 import DevicesPage from "./DevicesPage";
 import InfoPage from "./InfoPage";
 import MainPage from "./MainPage";
-
 import WorkPage from "./WorkPage";
+
 import {
   MessageOutlined,
   HomeOutlined,
@@ -26,6 +28,7 @@ import {
   MenuOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
+
 import { useEffect } from "react";
 
 import axios from "axios";
@@ -34,21 +37,44 @@ const LayoutPage = () => {
   const { Header, Content, Footer } = Layout;
   const [page, setPage] = useState("main");
   const [open, setOpen] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
+
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
   };
+
   const [winWidth, setWinwidth] = useState(
     document.documentElement.scrollWidth
   );
-  const URL = "http://158.160.19.224:8080";
-  //const URL = "http://localhost:8080";
+
+  const URL = constant.serverAPI;
+
   const [avatarPreview, setAvatarPreview] = useState("");
+  const [userData, setUserData] = useState({
+    username: "",
+    password: "",
+    avatar: "",
+  });
+
+  const sendLoginRequest = async (data) => {
+    if (isRegister) {
+      const result = await signinReq(userData);
+      console.log(result);
+    }
+
+    if (!isRegister) {
+      const result = await loginReq(userData);
+      console.log(result);
+    }
+  };
+
+  // Upload avatar-photo function
   const uploadFile = (e) => {
     if (true) {
-      console.log("file values", e);
+      //console.log("file values", e);
       const data = new FormData();
       data.append("image-file", e);
       axios
@@ -59,6 +85,10 @@ const LayoutPage = () => {
         })
         .then((res) => {
           setAvatarPreview(`${URL}/uploads/${res.data.image_path}`);
+          setUserData((userData) => ({
+            ...userData,
+            avatar: `${URL}/uploads/${res.data.image_path}`,
+          }));
           console.log(
             "path_avatar: ",
             `${URL}"/uploads/"${res.data.image_path}`
@@ -141,7 +171,6 @@ const LayoutPage = () => {
                       setPage("devices");
                     }}
                   >
-                    {" "}
                     <b>Карта</b>
                   </a>
                 </Menu.Item>
@@ -170,7 +199,15 @@ const LayoutPage = () => {
             <>
               <img width={30} height={30} src="./followmytracklogo.png" />
               <span> | </span>
-              Вход
+              Авторизация
+              <br />
+              <font size="small">
+                {isRegister ? (
+                  <a onClick={() => setIsRegister(false)}>Хочу войти</a>
+                ) : (
+                  <a onClick={() => setIsRegister(true)}>Пройти регистрацию</a>
+                )}
+              </font>
             </>
           }
           onClose={onClose}
@@ -182,9 +219,15 @@ const LayoutPage = () => {
           placement="left"
           extra={
             <Space>
-              <Button onClick={""} type="primary">
-                Регистрация
-              </Button>
+              {isRegister ? (
+                <Button onClick={sendLoginRequest} type="primary">
+                  Регистрация
+                </Button>
+              ) : (
+                <Button onClick={sendLoginRequest} type="primary">
+                  Вход
+                </Button>
+              )}
             </Space>
           }
         >
@@ -201,7 +244,15 @@ const LayoutPage = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Введите имя пожалуйста" />
+                  <Input
+                    onChange={(e) => {
+                      setUserData((userData) => ({
+                        ...userData,
+                        username: e.target.value,
+                      }));
+                    }}
+                    placeholder="Введите имя пожалуйста"
+                  />
                 </Form.Item>
               </Col>
             </Row>
@@ -217,40 +268,47 @@ const LayoutPage = () => {
                     },
                   ]}
                 >
-                  <Input type="password" placeholder="Ваш секретный пароль" />
+                  <Input
+                    type="password"
+                    onChange={(e) => {
+                      setUserData((userData) => ({
+                        ...userData,
+                        password: e.target.value,
+                      }));
+                    }}
+                    placeholder="Ваш секретный пароль"
+                  />
                 </Form.Item>
               </Col>
             </Row>
-            <Row gutter={16}>
-              <Col span={12}></Col>
-
-              <Col span={12}>
-                <Image />
-              </Col>
-            </Row>
           </Form>
-          <Form name="file-upload-form" onFinish={uploadFile}>
-            <Form.Item label="Аватар:" name="imageFile">
-              <ImgCrop shape="round" rotate onModalOk={uploadFile}>
-                <Upload
-                  name="avatar"
-                  customRequest={dummyRequest}
-                  className="avatar-uploader"
-                  showUploadList={false}
-                >
-                  {avatarPreview && <Avatar size="large" src={avatarPreview} />}
-                  <span> | </span>
-                  <Button size="large" icon={<UploadOutlined />}></Button>
-                </Upload>
-              </ImgCrop>
-            </Form.Item>
-          </Form>
+          {isRegister ? (
+            <Form name="file-upload-form" onFinish={uploadFile}>
+              <Form.Item label="Аватар:" name="imageFile">
+                <ImgCrop shape="round" rotate onModalOk={uploadFile}>
+                  <Upload
+                    name="avatar"
+                    customRequest={dummyRequest}
+                    className="avatar-uploader"
+                    showUploadList={false}
+                  >
+                    {avatarPreview && (
+                      <Avatar size="large" src={avatarPreview} />
+                    )}
+                    <span> | </span>
+                    <Button size="large" icon={<UploadOutlined />}></Button>
+                  </Upload>
+                </ImgCrop>
+              </Form.Item>
+            </Form>
+          ) : null}
+          <br />
         </Drawer>
         <Content
           className="backpic"
           style={{
-            paddingLeft: 30,
-            paddingRight: 30,
+            paddingLeft: "3%",
+            paddingRight: "3%",
           }}
         >
           <Breadcrumb style={{ "font-size": "large" }}>

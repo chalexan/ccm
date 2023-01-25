@@ -1,5 +1,3 @@
-// Пусть полежит здесб
-
 const mongoose = require('mongoose');
 
 const options = {

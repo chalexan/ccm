@@ -1,5 +1,4 @@
 const express = require('express');
-const request = require('request');
 const path = require('path');
 const md5 = require('md5')
 const cors = require('cors');
@@ -25,7 +24,6 @@ app.use(
         credentials: true,
     })
 );
-//app.use(multer({ dest: "uploads" }).single("filedata"));
 
 connect();
 
@@ -42,7 +40,7 @@ const upload = multer({ storage: storage })
 
 //Загрузка фото
 app.post('/upload', upload.fields([{ name: "image-file", maxCount: 1 }]), async (req, res) => {
-    console.log('Incoming POST ./signin ->', req.files['image-file'][0])
+    console.log('Incoming POST ./upload ->', req.files['image-file'][0])
     return res.json({
         image_path: req.files['image-file'][0].filename
     });
@@ -51,27 +49,19 @@ app.post('/upload', upload.fields([{ name: "image-file", maxCount: 1 }]), async 
 //Регистрация
 app.post('/signin', async (req, res) => {
     console.log('Incoming POST ./signin ->', req.body)
-    // let {
-    //     username,
-    //     password,
-    //     avatar,
-    // } = req.body;
+    let {
+        username,
+        password,
+        avatar,
+    } = req.body;
     try {
-        // if (avatar) {
-        //     //
-        // }
-        // let user = await User.create({
-        //     login: username,
-        //     password: md5(password)
-        // });
-
-        // console.log(" User created! ->", user);
-        //  res.json({ login: username, avatar: avatar });
-
-        return res.json({
-            image: req.file.path
+        let user = await User.create({
+            login: username,
+            avatar,
+            password: md5(password)
         });
-
+        console.log(" User created! ->", user);
+        return res.json({ login: username, avatar: avatar });
     } catch (e) {
         console.log('Error with DB:', e);
         res.send(`Error with  DB: ${e}`);
@@ -87,11 +77,9 @@ app.post('/login', async (req, res) => {
         password,
     } = req.body;
     try {
-        // console.log('Users', await User.find())
         let user = await User.findOne({
             login: username
         });
-        // console.log(await User.find(), user)
         if (!user) return res.status(401).send("Unautorized")
         if (md5(password) !== user.password) return res.status(401).send("Unautorized")
         console.log(" User autorized! ->", user);
@@ -101,8 +89,6 @@ app.post('/login', async (req, res) => {
         res.send(`Error with  DB: ${e}`);
     }
 })
-
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

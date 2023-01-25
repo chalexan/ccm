@@ -32,6 +32,7 @@ const MainPage = () => {
                 </Avatar>
               }
               title="Дарья Мокрушина"
+              style={{ fontSize: "small" }}
               description={
                 <>
                   <Tag color="red">Пещеры</Tag>{" "}
@@ -39,7 +40,7 @@ const MainPage = () => {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
-                    weekday: "short",
+
                     timezone: "UTC",
                     hour: "numeric",
                     minute: "numeric",
@@ -49,7 +50,7 @@ const MainPage = () => {
             />
           </>
         }
-        extra={<a href="#">Редактировать</a>}
+        extra={<a href="#">...</a>}
         style={{ width: "100%" }}
         actions={[
           <HeartOutlined key="like" />,
