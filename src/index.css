@@ -34,8 +34,12 @@ code {
 }
 
 .alphaback {
-  opacity: 0.7;
- 	background: rgb(208, 212, 206); /* Цвет фона */
+  opacity: 1;
+ 	background: rgb(220, 220, 220); /* Цвет фона */
+}
+
+.alphaback2 {
+ 	background: rgb(0, 0, 0) /* Цвет фона */
 }
 
 .shallow_gray {

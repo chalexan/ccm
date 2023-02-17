@@ -1,7 +1,8 @@
 import { Map, TileLayer, Popup, Marker } from "react-leaflet";
 import { latLngBounds } from "leaflet";
-import { Space } from "antd";
+import { Space, message } from "antd";
 import { useGeolocated } from "react-geolocated";
+import copy from "copy-to-clipboard";
 import {
   CaretDownOutlined,
   CaretRightOutlined,
@@ -161,7 +162,14 @@ const DevicesPage = () => {
               <br />
               Высота входа: {el.alt_entrance ? el.alt_entrance : "?"}
               <br />
-              Координаты: {el.location}
+              <a
+                onClick={() => {
+                  copy(el.location);
+                  message.success("Координаты скопированы");
+                }}
+              >
+                Координаты: {el.location}
+              </a>
             </Popup>
           </Marker>
         ))}

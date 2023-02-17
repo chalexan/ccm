@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">FollowMyTrack</string>
+    <string name="title_activity_main">FollowMyTrack</string>
+    <string name="package_name">io.ionic.FollowMyTrack</string>
+    <string name="custom_url_scheme">io.ionic.FollowMyTrack</string>
+</resources>
